@@ -6,4 +6,6 @@ const router = Router();
 router.get("/", categoriasControllers.getCategorias ); 
 router.post("/", categoriasControllers.postCategorias ); 
 
+router.get("/:id", categoriasControllers.getCategori ); 
+
 export default router;
