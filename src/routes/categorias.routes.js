@@ -7,5 +7,6 @@ router.get("/", categoriasControllers.getCategorias );
 router.post("/", categoriasControllers.postCategorias ); 
 
 router.get("/:id", categoriasControllers.getCategori ); 
+router.delete("/:id", categoriasControllers.deleteCategori ); 
 
 export default router;

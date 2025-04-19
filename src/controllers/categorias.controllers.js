@@ -39,10 +39,25 @@ const postCategorias = async(req, res) => {
 const getCategori = async (req, res) => {
 
     try {
-        console.log(req.param);
+        console.log(req.params);
         const {id} = req.params 
         const conecction = await getConnection();
         const result = await conecction.query("SELECT CategoriaID, CategoriaNombre, Descripcion, Imagen FROM categorias WHERE CategoriaID = ?" , id)
+        res.json(result);
+    
+    } catch (error) {
+        console.error("ERROR 500");
+    }
+
+}
+
+const deleteCategori = async (req, res) => {
+
+    try {
+        console.log("id de categoria a borrar", req.params);
+        const {id} = req.params 
+        const conecction = await getConnection();
+        const result = await conecction.query("DELETE FROM categorias WHERE CategoriaID = ?" , id)
         res.json(result);
     
     } catch (error) {
@@ -55,5 +70,6 @@ export const methodHTTP = {
 
     getCategorias,
     postCategorias,
-    getCategori
+    getCategori,
+    deleteCategori
 }
