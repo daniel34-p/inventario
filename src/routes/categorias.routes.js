@@ -3,6 +3,7 @@ import { methodHTTP as categoriasControllers } from "../controllers/categorias.c
 
 const router = Router();
 
-router.get("/", categoriasControllers.getCategorias ) 
+router.get("/", categoriasControllers.getCategorias ); 
+router.post("/", categoriasControllers.postCategorias ); 
 
 export default router;

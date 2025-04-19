@@ -8,6 +8,9 @@ const app = express();
 /* seteamos un puerto */
 app.set("port", 3000)
 
+/*Middleware*/
+app.use(express.json())
+
 app.use(cors());
 
 app.use("/api/categorias", categoriasRoutes)
