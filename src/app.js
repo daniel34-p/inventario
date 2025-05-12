@@ -15,4 +15,10 @@ app.use(cors());
 
 app.use("/api/categorias", categoriasRoutes)
 
+app.get("/", (req, res)=>{
+
+    res.send("RESTO API EN RENDER")
+
+})
+
 export default app; 
